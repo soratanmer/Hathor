@@ -53,8 +53,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       proxy: {
         // 反向代理解决跨域
         [env.VITE_APP_API]: {
-          target: 'http://localhost:3000',
-          // target: 'https://netease-cloud-music-api-soratanmer.vercel.app/',
+          // target: 'http://localhost:3000',
+          target: 'https://netease-cloud-music-api-soratanmer.vercel.app/',
           changeOrigin: true,
           rewrite: (path) => path.replace(new RegExp('^' + env.VITE_APP_API), '') // 替换 /dev-api 为 target 接口地址
         }
